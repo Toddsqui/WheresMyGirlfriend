@@ -7,6 +7,16 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <header>
+    <div class="col-xs-12" style="background-color: rgb(66,81,88); height: 110px;">
+      <% if notice.present? %>
+        <p class="alert alert-info"><%= notice %></p>
+      <% end %>
+      <% if alert.present? %>
+        <p class="alert alert-danger"><%= alert %></p>
+      <% end %>
+    </div>
+  </header>
 
 <%= yield %>
 
