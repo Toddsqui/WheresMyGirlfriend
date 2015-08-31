@@ -7,8 +7,17 @@
   <%= devise_error_messages! %>
 
 <div><%= f.label :name %><br />
-  <%= f.text_field :name, autofocus: true %></div>
+  <%= f.text_field :name, autofocus: true, :class => "creativity" %></div>
+<br />
 
+<div> <%=f.label :username %><br />
+  <%= f.text_field :name, autofocus: true, :class => "creativity" %></div>
+  <br />
+  <div class="radios">
+<div> <%= f.radio_button :is_female, '1' %> <%= f.label :is_female, "The Girlfriend" %> </div>
+<div> <%= f.radio_button :is_female, '0' %> <%= f.label :is_female, "The Boyfriend" %> </div>
+</div>
+<br />
   <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, :class => "creativity" %>
