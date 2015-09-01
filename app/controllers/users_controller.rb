@@ -21,10 +21,5 @@ class UsersController < ApplicationController
     end
   end
 
-  def add_friend
-  end
 
-
-  def remove_friend
-  end
 end

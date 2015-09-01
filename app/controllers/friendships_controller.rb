@@ -21,10 +21,15 @@ class FriendshipsController < ApplicationController
   end
 
   def create
-    @friendship = Friendship.new(friendship_params)
-    @friendship.save
-    respond_with(@friendship)
+    @friendship = current_user.friendships.build(:friend_id => params[:friend_id])
+    if @friendship.save
+      flash[:notice] = "Added friend."
+      redirect_to root_url
+    else
+      flash[:error] = "Unable to add friend."
+      redirect_to root_url
   end
+end
 
   def update
     @friendship.update(friendship_params)
