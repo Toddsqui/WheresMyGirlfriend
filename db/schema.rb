@@ -18,9 +18,9 @@ ActiveRecord::Schema.define(version: 20150903123750) do
 
   create_table "connections", force: true do |t|
     t.string   "status"
-    t.string   "recipient"
-    t.string   "sender"
     t.string   "message"
+    t.integer  "sender_id"
+    t.integer  "recipient_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -28,10 +28,12 @@ ActiveRecord::Schema.define(version: 20150903123750) do
   create_table "locations", force: true do |t|
     t.integer  "lat"
     t.integer  "long"
-    t.string   "user"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "locations", ["user_id"], name: "index_locations_on_user_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "",    null: false

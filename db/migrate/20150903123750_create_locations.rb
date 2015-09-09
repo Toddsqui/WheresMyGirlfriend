@@ -3,8 +3,7 @@ class CreateLocations < ActiveRecord::Migration
     create_table :locations do |t|
       t.integer :lat
       t.integer :long
-      t.string :user
-
+      t.belongs_to :user, index: true
       t.timestamps
     end
   end
