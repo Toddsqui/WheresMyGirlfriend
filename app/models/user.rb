@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  has_many :locations
+  has_one :location
   has_many :connections
 
 
