@@ -1,11 +1,13 @@
 <br>
 <div class="booyah-box">
-  <div class="col-xs-4">
-  <%= image_tag 'pinkicon.png' %>
-  </div>
-  <div class="col-xs-8">
-<h3><%= @user.email %></h3>
-<h3>Member Since: <%= @user.created_at.strftime("%B %d, %Y") %></h3>
-</div>
+    <div class="col-xs-4">
+         <%= image_tag 'pinkicon.png' %>
+    </div>
+    <div class="col-xs-8">
+        <h3><%= @user.email %></h3>
+        <h3>Member Since: <%= @user.created_at.strftime("%B %d, %Y") %></h3>
+          <%= link_to "delete", user, method: :delete, data: { confirm : "You sure?" } %>
+        <% end %>
+    </div>
 <div class="clear"></div>
 </div>
